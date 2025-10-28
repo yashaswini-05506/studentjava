@@ -6,20 +6,21 @@ class Student:
         self.course = course
 
     def display_details(self):
-        print("\n--- Student Details ---")
         print(f"Name     : {self.name}")
         print(f"Roll No  : {self.roll_no}")
         print(f"Age      : {self.age}")
         print(f"Course   : {self.course}")
+        print("-" * 30)
 
-# Input from user
-name = input("Enter student's name: ")
-roll_no = input("Enter roll number: ")
-age = int(input("Enter age: "))
-course = input("Enter course name: ")
+# List of student objects with sample data
+students = [
+    Student("Yashaswi", "23CS101", 20, "Computer Science"),
+    Student("Aarav", "23ME102", 21, "Mechanical Engineering"),
+    Student("Ishita", "23EC103", 19, "Electronics & Communication"),
+    Student("Rohan", "23EE104", 22, "Electrical Engineering")
+]
 
-# Create Student object
-student1 = Student(name, roll_no, age, course)
-
-# Display student details
-student1.display_details()
+# Display all student details
+print("📋 Student Records\n" + "=" * 30)
+for student in students:
+    student.display_details()
