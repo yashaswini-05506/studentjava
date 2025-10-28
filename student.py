@@ -1,26 +1,28 @@
+# Define a Student class
 class Student:
-    def __init__(self, name, roll_no, age, course):
+    def _init_(self, name, roll_no, course, marks):
         self.name = name
         self.roll_no = roll_no
-        self.age = age
         self.course = course
+        self.marks = marks
 
-    def display_details(self):
+    def display(self):
         print(f"Name     : {self.name}")
         print(f"Roll No  : {self.roll_no}")
-        print(f"Age      : {self.age}")
         print(f"Course   : {self.course}")
-        print("-" * 30)
+        print(f"Marks    : {self.marks}")
 
-# List of student objects with sample data
-students = [
-    Student("Yashaswi", "23CS101", 20, "Computer Science"),
-    Student("Aarav", "23ME102", 21, "Mechanical Engineering"),
-    Student("Ishita", "23EC103", 19, "Electronics & Communication"),
-    Student("Rohan", "23EE104", 22, "Electrical Engineering")
+# Sample student data
+student_list = [
+    Student("Akshata Patil", "101", "Computer Science", 88.5),
+    Student("Sneha Rao", "102", "Electronics", 92.0),
+    Student("Rahul Desai", "103", "Mechanical", 76.5),
+    Student("Priya Kulkarni", "104", "Civil", 81.0),
+    Student("Anil Joshi", "105", "Information Science", 89.0)
 ]
 
-# Display all student details
-print("📋 Student Records\n" + "=" * 30)
-for student in students:
-    student.display_details()
+# Display all students
+print("\n--- Sample Student Details ---")
+for i, student in enumerate(student_list, start=1):
+    print(f"\nStudent {i}:")
+    student.display()
